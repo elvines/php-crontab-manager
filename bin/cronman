@@ -3,4 +3,4 @@
 PHP_EXC=`command -v php`
 REALPATH=$(readlink -f $0)
 ROOT=$(dirname `dirname $REALPATH`)
-$PHP_EXC $ROOT/src/CliTool.php $@
+$PHP_EXC $ROOT/src/CrontabManager/CliTool.php $@

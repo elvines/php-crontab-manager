@@ -1,0 +1,27 @@
+{
+    "name": "piotr-m/php-crontab-manager",
+    "description": "PHP crontab manager library",
+    "version": "0.0.1",
+    "type": "library",
+    "keywords": ["cron", "crontab"],
+    "time": "2013-03-07",
+    "license": "GPL-3.0+",
+    "authors": [
+        {
+            "name": "Krzysztof Suszyński",
+            "email": "k.suszynski@mediovski.pl",
+            "role": "developer"
+        },
+        {
+            "name": "Peter",
+            "email": "piotr-m@piotr-m.net",
+            "role": "maintainer"
+        },
+    ],
+    "autoload": {
+        "psr-0": {
+            "CrontabManager\\": "src/"
+        }
+    },
+    "bin": ["bin/cronman"]
+}

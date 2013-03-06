@@ -3,3 +3,4 @@
 /.idea
 /.settings
 /tmp/*
+/composer.lock
