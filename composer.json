@@ -13,6 +13,11 @@
             "role": "developer"
         },
         {
+            "name": "Michael Dowling",
+            "email": "mtdowling@gmail.com",
+            "role": "developer"
+        },
+        {
             "name": "Peter",
             "email": "piotr-m@piotr-m.net",
             "role": "maintainer"
@@ -20,7 +25,8 @@
     ],
     "autoload": {
         "psr-0": {
-            "CrontabManager\\": "src/"
+            "CrontabManager\\": "src/",
+            "Cron\\": "src/"
         }
     },
     "bin": ["bin/cronman"]
