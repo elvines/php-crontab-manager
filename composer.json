@@ -21,7 +21,7 @@
             "name": "Peter",
             "email": "piotr-m@piotr-m.net",
             "role": "maintainer"
-        },
+        }
     ],
     "autoload": {
         "psr-0": {
