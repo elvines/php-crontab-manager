@@ -44,8 +44,8 @@ $job->onMinute('35-40')->doJob("echo bar");
 $crontab->add($job);
 $crontab->save();
 ```
-    
-A more complex example, but simpler to write. Adding and removing files to 
+
+A more complex example, but simpler to write. Adding and removing files to
 manage by the cron job. Files will be updated so as not to disrupt other tasks
 in the cron:
 

@@ -26,7 +26,7 @@
  *
  */
 
-namespace php\manager\crontab;
+namespace CrontabManager;
 
 /**
  *
@@ -248,7 +248,6 @@ class CliTool
      */
     public function enable()
     {
-        $this->_loadClasses();
         $manager = $this->_createManager();
         if ($this->_sudo) {
             $manager->user = $this->_sudo;
@@ -265,7 +264,6 @@ class CliTool
      */
     public function disable()
     {
-        $this->_loadClasses();
         $manager = $this->_createManager();
         if ($this->_sudo) {
             $manager->user = $this->_sudo;
@@ -296,20 +294,6 @@ class CliTool
         $usage .= "   --help|-h,--usage  Displays this help\n";
 
         return $usage;
-    }
-
-    /**
-     * Loads classes if they are not present
-     *
-     */
-    private function _loadClasses()
-    {
-        if (!class_exists('php\manager\crontab\CrontabManager')) {
-            require_once __DIR__ . '/CrontabManager.php';
-        }
-        if (!class_exists('php\manager\crontab\CronEntry')) {
-            require_once __DIR__ . '/CronEntry.php';
-        }
     }
 
 }

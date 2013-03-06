@@ -27,7 +27,7 @@
  *
  */
 
-namespace php\manager\crontab;
+namespace CrontabManager;
 
 /**
  * Crontab manager implementation

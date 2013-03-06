@@ -26,7 +26,7 @@
  *
  */
 
-namespace php\manager\crontab;
+namespace CrontabManager;
 
 /**
  * Crontab Entry object
@@ -380,10 +380,10 @@ class CronEntry
         }
         return $out;
     }
-    
+
     /**
      * Fix comments by adding # sign
-     * 
+     *
      * @param array $comments
      * @return array
      */
