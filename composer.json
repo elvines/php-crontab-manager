@@ -1,10 +1,10 @@
 {
     "name": "piotr-m/php-crontab-manager",
     "description": "PHP crontab manager library",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "type": "library",
     "keywords": ["cron", "crontab"],
-    "time": "2013-03-07",
+    "time": "2013-09-17",
     "license": "GPL-3.0+",
     "authors": [
         {
