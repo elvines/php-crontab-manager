@@ -62,6 +62,13 @@ class CrontabManager
     private $_tmpfile;
 
     /**
+     * Emails to send notifications to.
+     *
+     * @var string
+     */
+    private $emails = array();
+
+    /**
      * @var CronEntry[]
      */
     private $jobs = array();
@@ -403,6 +410,14 @@ class CrontabManager
             $contents = explode("\n", $contents);
         }
 
+        foreach ($contents as $i => $l) {
+            if (stripos($l, 'MAILTO=') !== false) {
+                list(,$emails) = explode('AILTO=', $l);
+                $this->emails = array_merge($this->emails, explode(',', $emails));
+                unset($contents[$i]);
+            }
+        }
+
         foreach ($this->filesToRemove as $hash => $path) {
             $contents = $this->_removeBlock($contents, $hash);
         }
@@ -411,6 +426,13 @@ class CrontabManager
             $contents = $this->_removeBlock($contents, $hash);
             $contents = $this->_addBlock($contents, $file, $hash);
         }
+
+        if ($this->emails) {
+            $emails = array_unique($this->emails);
+            $str = 'MAILTO=' . implode(',', $emails);
+            array_unshift($contents, $str);
+        }
+
         if ($this->jobs)
             $contents[] = '';
         foreach ($this->jobs as $job) {
@@ -538,6 +560,22 @@ class CrontabManager
         $this->files = array();
         $this->replace = array();
         $this->filesToRemove = array();
+
+        return $this;
+    }
+
+    /**
+     * Add email to list.
+     *
+     * @param string $email Email to add to internal list.
+     *
+     * @return CrontabManager
+     */
+    public function addEmail($email)
+    {
+        if (!in_array($email, $this->emails)) {
+            $this->emails[] = $email;
+        }
 
         return $this;
     }
